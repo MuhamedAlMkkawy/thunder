@@ -1,0 +1,58 @@
+{
+<<<<<<< HEAD
+  "hash": "4d6e2523",
+  "configHash": "e9ac427d",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "b238660d",
+  "optimized": {},
+  "chunks": {}
+=======
+  "hash": "8cea1a67",
+  "configHash": "e9ac427d",
+  "lockfileHash": "88bf6518",
+  "browserHash": "11ead622",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "b0726b73",
+      "needsInterop": false
+    },
+    "primevue/config": {
+      "src": "../../node_modules/primevue/config/index.mjs",
+      "file": "primevue_config.js",
+      "fileHash": "71fc98c7",
+      "needsInterop": false
+    },
+    "primevue/multiselect": {
+      "src": "../../node_modules/primevue/multiselect/index.mjs",
+      "file": "primevue_multiselect.js",
+      "fileHash": "08a11a0a",
+      "needsInterop": false
+    },
+    "vue-i18n": {
+      "src": "../../node_modules/vue-i18n/dist/vue-i18n.mjs",
+      "file": "vue-i18n.js",
+      "fileHash": "bcfcb55b",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "ae8cf4a6",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-6LLG4T7J": {
+      "file": "chunk-6LLG4T7J.js"
+    },
+    "chunk-AYVSL3LM": {
+      "file": "chunk-AYVSL3LM.js"
+    },
+    "chunk-CUOF2D23": {
+      "file": "chunk-CUOF2D23.js"
+    }
+  }
+>>>>>>> 24d9c64aa2de27ad64fdad92d97c6fe4ec22d978
+}

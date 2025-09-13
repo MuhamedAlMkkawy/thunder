@@ -1,0 +1,179 @@
+@import './variables';
+@import './mixins';
+
+table {
+  border-radius: 30px 30px 0 0; 
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.p-datatable-wrapper::-webkit-scrollbar{
+  height: 5px;
+}
+
+
+table th, table td {
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 400;
+  color: #434343;
+  text-align: start;
+  text-wrap: nowrap;
+}
+
+.centered-table .p-column-header-content{
+  justify-content: center;
+}
+.centered-table td{
+  text-align: center;
+}
+
+table th.showFull, table td.showFull {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+}
+table th.showFull a{
+  display: block;
+}
+table th.showFull .image, table td.showFull a .image {
+  width: 15px;
+  /* position: absolute;
+  inset-inline-end: 5px; */
+  z-index: 9;
+}
+
+table thead ,
+table thead tr{
+  background: #F8F8FF;
+  color: $textColor;
+  border-bottom: unset;
+  // outline: none;
+}
+
+// table tr{
+//   transition: 0.6s;
+//   &:hover{
+//     background: rgba($mainColor , 0.2);
+//   }
+// }
+
+
+.p-datatable-wrapper{
+  border-radius: 30px 30px 0 0;
+}
+
+table tbody{
+  border-bottom: unset;
+}
+
+.p-datatable-tbody > tr:not(:last-of-type) > td{
+  border-bottom: 0.5px solid #CBCBCB !important;
+}
+
+// table th:first-of-type{
+//   border-radius: 0 30px 0 0;
+// }
+// table th:last-of-type{
+//   border-radius: 30px 0  0 0 ;
+// }
+
+table th {
+  background-color: #F8F8FF;
+  padding: 14px 5px !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+table td {
+  padding: 14px 0 !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding-inline: 5px;
+  text-align: center !important;
+}
+table td a{
+  display: block;
+}
+table td .image{
+  width: 24px;
+  margin: 0 auto;
+}
+table tbody tr:last-child td{
+  border-bottom: unset !important;
+}
+.p-datatable-column-header-content{
+  justify-content: center;
+}
+
+th.p-datatable-header-cell{
+  border-bottom: unset !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .table th, .table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .table th::before, .table td::before {
+    content: attr(data-header);
+    float: left;
+    font-weight: bold;
+  }
+
+  .table td {
+    clear: both;
+  }
+}
+
+table{
+  .buttons{
+    @include displayFlex($gap : 4px);
+    button{
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #fff;
+      border: 1px solid;
+      @include displayFlex();
+      &.edit_btn{
+        background: #7C9DC4;
+        &:hover{
+          border-color:#7C9DC4;
+          color: #7C9DC4;
+          background: #fff;
+        }
+      }
+      &.delete_btn{
+        background: #A80202;
+        &:hover{
+          border-color:#A80202;
+          color: #A80202;
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+.products_table th {
+  background: $secColor;
+  padding: 18px 0 !important;
+}
+
+
+// .unpricing-table th{
+//   background: $mainColor;
+//   color: #fff;
+// }

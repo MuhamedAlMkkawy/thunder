@@ -1,0 +1,17 @@
+@import './mixins';
+@import './variables';
+
+
+.submit_buttons{
+  @include displayFlex();
+  .main-btn{
+    max-width: 350px;
+  }
+  .refuse_btn{
+    background: $secColor;
+    &:hover{
+      border-color:$secColor !important;
+      color: $secColor;
+    }
+  }
+}

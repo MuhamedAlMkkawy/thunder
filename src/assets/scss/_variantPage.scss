@@ -1,0 +1,58 @@
+@import './mixins';
+@import './variables';
+
+form{
+  max-width: unset;
+  justify-content: flex-start;
+  min-height: unset;
+  .inputs{
+    position: relative;
+    @include displayFlex($justify: flex-start , $wrap : wrap);
+    margin-block-end: 30px;
+    width: 100%;
+    .input-wrap{
+      width: 30%;
+      @media screen and (max-width : 767px) {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+  .addons{
+    @include displayFlex($justify : flex-start , $wrap : wrap);
+    .addon_tab{
+      @include displayFlex($justify : flex-start);
+      width: 250px;
+      // flex-grow: 1;
+      input{
+        width: 40px;
+      }
+      label{
+        @include displayFlex();
+        .image{
+          width: 70px;
+          height: 70px;
+          border-radius: 6px;
+          overflow: hidden;
+          box-shadow: 2px 4px 4px 0px #0000000D;
+          flex-shrink: 0;
+          img{
+            object-fit: contain;
+          }
+        }
+        .text{
+          h3{
+            // @include textTruncate(1);
+            font-size: 14px;
+            font-weight: 400;
+            max-height: 35px;
+            overflow-y: scroll;
+          }
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

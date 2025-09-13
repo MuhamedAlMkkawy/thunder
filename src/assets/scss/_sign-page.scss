@@ -1,0 +1,57 @@
+@import "./mixins";
+.sign-page {
+  .content {
+    @include displayFlex($align: stretch);
+    width: 100%;
+    overflow-y: scroll;
+    .form-side {
+      width: 65%;
+      padding: 50px 20px;
+      margin-inline-start: auto;
+      min-height: 100vh;
+      .skew-image{
+        position: fixed;
+        inset-inline-end: 0;
+        top: 0;
+        max-width: 430px;
+        width: 100%;
+        z-index: 3;
+        pointer-events: none !important;
+        img.rotate-en{
+          transform: rotateY(180deg);
+        }
+        .title{
+          position: absolute;
+          top: 0;
+          inset-inline-end: 100px;
+          color: #fff;
+          font-size: clamp(14px , 2.5vw , 18px);
+          text-align: center;
+          padding: 0 18px;
+          background: url("../images/title_img.png");
+          background-size: cover;
+          background-position: center;
+          width: 100px;
+          height: 100px;
+          @include displayFlex();
+          @media (max-width : 500px){
+            inset-inline-end:20px;
+          }
+        }
+        @media (max-width : 600px){
+          .title{
+            inset-inline-end: 8px;
+          }
+          img{
+            display: none
+          }
+        }
+      }
+      @media (max-width : 767px){
+        padding: 30px 0;
+        width: 90%;
+        margin-inline-start: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "./variables";
+
+
+
+.variant_btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0;
+  border: 1px solid transparent;
+  color: #fff;
+  @include displayFlex();
+  i.pi{
+    font-size: 18px;
+    font-weight: 800;
+  }
+  &.submit_variant{
+    background: $secColor;
+    &:hover{
+      border: 1px solid $secColor;
+      background: #fff;
+      color: $secColor;
+    }
+  }
+  &.delete_variant{
+    background: #A80202;
+    &:hover{
+      border: 1px solid #A80202;
+      background: #fff;
+      color: #A80202;
+    }
+  }
+}

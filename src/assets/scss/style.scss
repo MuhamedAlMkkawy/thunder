@@ -1,0 +1,131 @@
+// import variables 
+@import "./variables";
+@import "./generic";
+@import "./mixins";
+@import "./popup";
+@import "./form";
+@import "./main-btn";
+@import "./sign-page";
+@import "./table";
+@import "./pageTransition";
+@import "./errorMsg";
+@import "./skeleton";
+@import "./variant_btn";
+@import "./variantPage";
+@import "./empty";
+@import "./submit_btns";
+@import "./pulse";
+@import "./Pagination";
+@import "./order-details";
+@import "./multi-select";
+@import "./chat";
+
+
+
+// to style splitted page to the main / sec color in the background
+.half-page{
+  background:linear-gradient(to right , $secColor 0%, $secColor 50%,$mainColor 50% , $mainColor 100% ) ;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+
+// -------------- to style page -------------------
+.page_content{
+  padding: 40px clamp(8px , 2.5vw , 72px);
+  box-shadow: -3px 3px 4px 0px #00000026;
+  background-color: #fff;
+  @media (max-width:400px){
+    padding: 20px 8px;
+  }
+}
+
+
+.button{
+  margin-bottom: 15px;
+  text-align: end;
+  .main-btn{
+    max-width: 250px;
+    width: 100%;
+    font-size: clamp(14px , 2.5vw , 18px);
+
+  }
+}
+
+
+.page{
+  padding: 26px 0;
+  background: #fff;
+  box-shadow: -3px 3px 4px 0px #00000026;
+  @media (max-width : 500px){
+    padding: 14px 8px;
+  }
+  h4{
+    padding-inline: clamp(8px, 2.5vw , 30px);
+    font-size: clamp(16px , 4vw , 20px);
+    font-weight: 400;
+    color: $textColor;
+    margin-bottom: 20px;
+  }
+  hr{
+    border: 1px solid #F1F1F1;
+  }
+  .content{
+    padding-inline: clamp(8px, 2.5vw , 30px);
+  }
+}
+
+
+.edit_buttons{
+  @include displayFlex($gap : 10px , $wrap : wrap);
+  width: 100%;
+  @media (max-width : 500px){
+    flex-wrap: wrap;
+  }
+  a{
+    max-width: 48%;
+    width: 100%;
+  }
+  .main-btn{
+    margin: 20px 0 0;
+  }
+}
+
+// to style toast message
+.p-toast-message-content{
+  padding: 15px 10px;
+  gap: 10px;
+  direction: rtl;
+  margin-bottom: 2px;
+  z-index: 999;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon.p-icon{
+  width: 24px;
+  height: unset;
+}
+
+div#OT_e4d2dae9_c748_4a8e_89fc_035da64368f0{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  width: 500px;
+  height: 500px;
+  z-index: 999;
+}
+
+.hidden{
+  // display:  none !important;
+  opacity: 0;
+  height: 0 !important;
+}
+
+
+.p-rating-cancel-item{
+  display:none !important;
+}

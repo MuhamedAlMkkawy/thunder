@@ -1,0 +1,181 @@
+@import "./mixins";
+
+.order_items{
+  @include displayFlex($justify : flex-start , $align : stretch ,$wrap : wrap);
+  margin-bottom: clamp(20px , 2.5vw , 70px);
+  .order_item{
+    border-radius: 20px;
+    width: 48%;
+    padding: 20px 0;
+    margin-bottom: clamp(10px , 2.5vw , 30px);
+    h4{
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      padding: 0 clamp(10px , 2.5vw , 30px);
+    }
+    hr{
+      width: 100%;
+      border: 1px solid #F1F1F1;
+    }
+    .content{
+      margin-block-start: 25px;
+      padding: 0 clamp(10px , 2.5vw , 30px);
+      @include displayFlex($gap : 5px , $justify : flex-start);
+      @media (max-width: 567px){
+        flex-wrap: wrap !important;
+        .image{
+          width: 50px;
+          height: 50px;
+          img{
+            object-fit: cover !important;
+          }
+        }
+      }
+      .image{
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      } 
+      .info{
+        width: 100%;
+        .row{
+          @include displayFlex($justify:space-between);
+          width: 100%;
+          h3{
+            font-size: 14px;
+            font-weight: 500;
+          }
+          h5{
+            font-size: 14px;
+            font-weight: 400;
+            i.pi-star-fill{
+              color: #E5A618;
+            }
+            i.pi-mobile{
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+    &.product_info{
+      @include displayFlex($gap : 5px , $justify : flex-start);
+      padding-inline: 8px;
+      max-height: 170px;
+      .image{
+        width: 80px;
+        height: 120px;
+        overflow: hidden;
+        flex-shrink: 0;
+        img{
+          object-fit: contain;
+        }
+      }
+      .info{
+        padding-inline: 5px;
+        flex-grow: 1;
+        h2{
+          font-size: clamp(14px , 2.5vw , 18px);
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+        p{
+          line-height: 1.4;
+          font-size: 14px;
+          font-weight: 400;
+          color: #00000080;
+          max-height: 60px;
+          overflow: overlay;
+        }
+        ul{
+          li{
+            @include displayFlex($justify:space-between);
+            padding-inline-end: 20px;
+            h3{
+              font-size: 16px;
+              font-weight: 400;
+              color: #000000;
+            }
+            span{
+              font-size: 14px;
+              color: #7C9DC4;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 767px) {
+        max-height: fit-content;
+      }
+    }
+    &.order_info{
+      @include displayFlex($direction : column , $align : flex-start,$justify : flex-start , $gap : 5px);
+      flex-grow: 1;
+      .content{
+        @include displayFlex($wrap : wrap , $gap : 30px 20px );
+        width: 100%;
+        .tab{
+          width: 48%;
+          flex-grow: 1;
+          h5{
+            font-size: 15px;
+            font-weight: 400;
+            color: #696969;
+          }
+          h6{
+            font-size: 16px;
+            font-weight: 500;
+            color: #000000;
+          }
+        }
+      }
+    }
+    &.fatoorah_info{
+      width: 100%;
+      // flex-shrink: 0;
+      .content{
+        @include displayGrid();
+        .row{
+          h3{
+            font-size: 16px;
+            font-weight: 500;
+            color: grey;
+          }
+          h5{
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+          }
+          &:last-of-type{
+            h3,
+            h5{
+              color:$mainColor !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px){
+    flex-wrap: wrap;
+    .order_item{
+      width: 100%;
+      flex-wrap: wrap !important;
+      .image{
+        height: 80px;
+        margin-inline-end: auto;
+        img{
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+h6.fatorah_text{
+  font-size: clamp(16px , 2.5vw , 20px);
+  font-weight: 500;
+  margin: 0 auto 21px;
+  text-align: center;
+}

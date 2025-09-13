@@ -1,0 +1,140 @@
+<!-- <template>
+  <div :style="{ direction: $i18n.locale === 'en' ? 'ltr' : 'rtl' }">
+    <RouterView />
+  </div>
+</template>
+
+<script setup>
+import { onMounted } from "vue";
+import { initializeFirebaseMessaging } from "./firebase";
+import { useStore } from "./store/store";
+
+onMounted(() => {
+  const store = useStore();
+  initializeFirebaseMessaging(store);
+});
+</script> -->
+
+
+
+
+<template>
+  <div>
+  <NuxtLayout>
+  <NuxtPage />
+  </NuxtLayout>
+  
+  <Toast />
+  <div v-if="alerts.length" class="notification_alert p-3" ref="alert">
+  <div v-for="(item, index) in alerts" :key="item" class="item_alert justify-content-between">
+  <img src="@/assets/imgs/icons/notification-bell.svg" alt="">
+  <NuxtLink class="defualt-link" :to="'/financialReports/orderDetails/' + item.data.object"
+  v-if="item.data.type == 'settlement'">
+  <div class="flex flex-column">
+  
+  <span class="clamp-2">{{ item.notification.body }}</span>
+  
+  </div>
+  </NuxtLink>
+  <NuxtLink class="defualt-link" :to="'/auctionDetails/' + item.data.object"
+  v-else-if="item.data.type == 'auction'">
+  <div class="flex flex-column">
+  
+  <span class="clamp-2">{{ item.notification.body }}</span>
+  
+  </div>
+  </NuxtLink>
+  <NuxtLink class="defualt-link" :to="'/closedAuctionDetails/' + item.data.object"
+  v-else-if="item.data.type == 'closed-envelope-auction'">
+  <div class="flex flex-column">
+  
+  <span class="clamp-2">{{ item.notification.body }}</span>
+  
+  </div>
+  </NuxtLink>
+  <NuxtLink class="defualt-link" to="/notifications" v-else>
+  <div class="flex flex-column">
+  
+  <span class="clamp-2">{{ item.notification.body }}</span>
+  
+  </div>
+  </NuxtLink>
+  <div style="cursor: pointer;" @click="remove_item($event, index)">
+  <img src="@/assets/imgs/icons/close-circle.svg" style="pointer-events: none" alt="">
+  </div>
+  </div>
+  </div>
+  </div>
+  </template>
+  
+  <script setup>
+  import Toast from 'primevue/toast'
+  // ============================================================================== imports
+  // FCM
+  import { initializeApp } from "firebase/app";
+  import { getMessaging, getToken, onMessage } from "firebase/messaging";
+  /******************* Plugins *******************/
+  const toast = useToast();
+  const notify_msg = ref({});
+  const alerts = ref([]);
+  const alert = ref();
+  function runFirebase() {
+  const firebaseConfig = {
+  apiKey: "AIzaSyDMryFNsv7jbaZbRg8Boek8mAcK5LPXSt0",
+  authDomain: "thandar-dbdda.firebaseapp.com",
+  projectId: "thandar-dbdda",
+  storageBucket: "thandar-dbdda.firebasestorage.app",
+  messagingSenderId: "419462465590",
+  appId: "1:419462465590:web:fa6ade1d03fc6205413097",
+  measurementId: "G-C25KJ3EDQ1"
+  };
+  initializeApp(firebaseConfig);
+  const messaging = getMessaging();
+  
+  onMessage(messaging, (payload) => {
+  notify_msg.value = payload
+  
+  console.log(payload);
+  setTimeout(() => {
+  alerts.value.unshift(notify_msg.value)
+  // audio_bell.value.play()
+  }, 50)
+  
+  setTimeout(() => {
+  alerts.value.splice(-1)
+  }, 6000);
+  });
+  
+  getToken(messaging, {
+  VapidKey:
+  "BC453guNoLzbTaMhphZ8QUtOkbQMCgV9v38691Dabs1mANijZMGivYY86Qji_XZtLARTPFOmooCHO44jjKFoF34",
+  }).then((currentToken) => {
+  if (currentToken) {
+  console.log(currentToken);
+  
+  store.storeMessageToken(currentToken); // Use store to save the token
+
+  } else {
+  console.log("No registration token available. Request permission to generate one.");
+  }
+  }).catch((err) => {
+  console.log("An error occurred while retrieving token. ", err);
+  });
+  }
+  
+
+  // ===================================== remove item from alerts
+  const remove_item = (e, index) => {
+  let notify_item = e.target.parentElement;
+  notify_item.classList.add("fade_out_reverse");
+  setTimeout(() => {
+  notify_item.remove();
+  alerts.value.splice(index, 1);
+  }, 500);
+  };
+  
+  /******* onMounted********* */
+  onMounted(() => {
+  runFirebase()
+  });
+  </script>

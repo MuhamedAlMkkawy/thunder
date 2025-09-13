@@ -1,0 +1,1939 @@
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Light.woff2") format("woff2"), url("../fonts/Cairo-Light.woff") format("woff"), url("../fonts/Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Medium.woff2") format("woff2"), url("../fonts/Cairo-Medium.woff") format("woff"), url("../fonts/Cairo-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Regular.woff2") format("woff2"), url("../fonts/Cairo-Regular.woff") format("woff"), url("../fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-SemiBold.woff2") format("woff2"), url("../fonts/Cairo-SemiBold.woff") format("woff"), url("../fonts/Cairo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Bold.woff2") format("woff2"), url("../fonts/Cairo-Bold.woff") format("woff"), url("../fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Black.woff2") format("woff2"), url("../fonts/Cairo-Black.woff") format("woff"), url("../fonts/Cairo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-ExtraBold.woff2") format("woff2"), url("../fonts/Cairo-ExtraBold.woff") format("woff"), url("../fonts/Cairo-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-ExtraLight.woff2") format("woff2"), url("../fonts/Cairo-ExtraLight.woff") format("woff"), url("../fonts/Cairo-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "Cairo";
+}
+a:hover {
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body {
+  font-family: "Cairo";
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  background: #F8F8FF;
+}
+
+*::-webkit-scrollbar {
+  background-color: #fff;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #7C9DC4;
+  border-radius: 25px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #fff;
+  width: 10px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+input,
+textarea,
+select {
+  border: unset;
+  outline: none;
+  width: 100%;
+  direction: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  height: 30px;
+  background: transparent;
+  font-family: "Cairo";
+}
+
+textarea {
+  max-height: 60px;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+}
+
+::-moz-selection {
+  background: #E0BDB0;
+  color: #fff;
+}
+
+::selection {
+  background: #E0BDB0;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F8F8FF;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E0BDB0;
+  border-radius: 30px;
+}
+
+input[type=file i]::-webkit-file-upload-button {
+  display: none;
+}
+
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+.popup {
+  position: fixed;
+  inset-inline-start: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.popup .close_btn {
+  position: absolute;
+  inset-inline-end: -10px;
+  top: -10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: 0.6s;
+  border: 1px solid transparent;
+  color: #fff;
+  background: #A80202;
+}
+.popup .close_btn:hover {
+  border: 1px solid #A80202;
+  color: #A80202;
+  background: #fff;
+}
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 38px;
+  background: #fff;
+  padding-block: clamp(20px, 2.5vw, 70px) clamp(20px, 2.5vw, 50px);
+  text-align: center;
+  padding-inline: clamp(8px, 2.5vw, 15px);
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+.popup .content .image {
+  max-width: 200px;
+  margin: 0 auto 20px;
+}
+.popup .content h5 {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 600;
+}
+.popup .content p {
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.popup .content .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+.popup .content .buttons button.delete_btn {
+  background: #A80202;
+}
+.popup .content .buttons button.delete_btn:hover {
+  border-color: #A80202 !important;
+  color: #A80202;
+  background: #fff;
+}
+@media (max-width: 700px) {
+  .popup .content .buttons {
+    flex-wrap: wrap;
+  }
+}
+
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+form {
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 80vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+form .image-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  width: 100%;
+}
+form .image-uploader label.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form .image-uploader label.circle:hover {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+form h5 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1F2327;
+}
+form p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8D8D8D;
+  margin-bottom: 20px;
+}
+form .input-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: 100%;
+}
+form .input-wrap .inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  width: 100%;
+  height: 40px;
+}
+form .input-wrap .inputs .input {
+  width: 100%;
+}
+form .input {
+  position: relative;
+  width: 100%;
+}
+form .input .pi {
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #7C9DC4;
+}
+form .input select + .pi {
+  position: absolute;
+  inset-inline-end: -2px;
+  inset-block-start: -18px;
+}
+form .input label.pi {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 2px;
+  cursor: pointer;
+}
+form .input .images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 90%;
+  overflow-y: scroll;
+  height: 50px;
+}
+form .input .images .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+form .input .images .image i.pi {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  color: #fff;
+  transition: 0.6s;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(168, 2, 2, 0.7843137255);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+form .input .images .image:hover i.pi {
+  opacity: 1;
+}
+form .main-btn {
+  font-family: "Cairo";
+}
+form .main-btn + p {
+  text-align: center !important;
+  margin-bottom: 0;
+}
+form .main-btn + p a, form .main-btn + p button {
+  color: #7C9DC4;
+  font-family: "Cairo";
+  text-decoration: underline;
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.input-wrap.phonewithcode .inputs {
+  gap: 0;
+}
+.input-wrap.phonewithcode .inputs .input:first-of-type {
+  border-inline-end: 1.48px solid rgba(0, 0, 0, 0.1019607843);
+}
+.input-wrap.phonewithcode .inputs .input:last-of-type {
+  width: 90px;
+}
+.input-wrap.phonewithcode .inputs .input:last-of-type select {
+  text-align: center;
+}
+
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+.main-btn {
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  background: #4C637F;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 50px;
+  font-family: "Cairo" !important;
+}
+.main-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transition: 0.3s;
+}
+.main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transition: 0.3s;
+}
+.main-btn:hover {
+  color: #4C637F;
+  border: 1px solid #4C637F !important;
+}
+.main-btn:hover::after {
+  width: 50%;
+}
+.main-btn:hover::before {
+  width: 50%;
+}
+.main-btn.variants_btn {
+  background: #E0BDB0;
+  color: #fff;
+}
+.main-btn.variants_btn:hover {
+  color: #fff;
+  border-color: #E0BDB0;
+}
+.main-btn.variants_btn:hover::after, .main-btn.variants_btn:hover::before {
+  background: #E0BDB0;
+}
+
+.main-btn.reversed {
+  background: #fff;
+  color: #4C637F;
+  border: 1px solid #4C637F !important;
+}
+.main-btn.reversed:hover {
+  color: #fff;
+}
+.main-btn.reversed::after {
+  background: #4C637F;
+}
+.main-btn.reversed::before {
+  background: #4C637F;
+}
+
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+.sign-page .content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  width: 100%;
+  overflow-y: scroll;
+}
+.sign-page .content .form-side {
+  width: 65%;
+  padding: 50px 20px;
+  margin-inline-start: auto;
+  min-height: 100vh;
+}
+.sign-page .content .form-side .skew-image {
+  position: fixed;
+  inset-inline-end: 0;
+  top: 0;
+  max-width: 430px;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none !important;
+}
+.sign-page .content .form-side .skew-image img.rotate-en {
+  transform: rotateY(180deg);
+}
+.sign-page .content .form-side .skew-image .title {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 100px;
+  color: #fff;
+  font-size: clamp(14px, 2.5vw, 18px);
+  text-align: center;
+  padding: 0 18px;
+  background: url("../images/title_img.png");
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+@media (max-width: 500px) {
+  .sign-page .content .form-side .skew-image .title {
+    inset-inline-end: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .sign-page .content .form-side .skew-image .title {
+    inset-inline-end: 8px;
+  }
+  .sign-page .content .form-side .skew-image img {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .sign-page .content .form-side {
+    padding: 30px 0;
+    width: 90%;
+    margin-inline-start: unset;
+  }
+}
+
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+table {
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.p-datatable-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+table th, table td {
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 400;
+  color: #434343;
+  text-align: start;
+  text-wrap: nowrap;
+}
+
+.centered-table .p-column-header-content {
+  justify-content: center;
+}
+
+.centered-table td {
+  text-align: center;
+}
+
+table th.showFull, table td.showFull {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+}
+
+table th.showFull a {
+  display: block;
+}
+
+table th.showFull .image, table td.showFull a .image {
+  width: 15px;
+  /* position: absolute;
+  inset-inline-end: 5px; */
+  z-index: 9;
+}
+
+table thead,
+table thead tr {
+  background: #F8F8FF;
+  color: #1F2327;
+  border-bottom: unset;
+}
+
+.p-datatable-wrapper {
+  border-radius: 30px 30px 0 0;
+}
+
+table tbody {
+  border-bottom: unset;
+}
+
+.p-datatable-tbody > tr:not(:last-of-type) > td {
+  border-bottom: 0.5px solid #CBCBCB !important;
+}
+
+table th {
+  background-color: #F8F8FF;
+  padding: 14px 5px !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+table td {
+  padding: 14px 0 !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding-inline: 5px;
+  text-align: center !important;
+}
+
+table td a {
+  display: block;
+}
+
+table td .image {
+  width: 24px;
+  margin: 0 auto;
+}
+
+table tbody tr:last-child td {
+  border-bottom: unset !important;
+}
+
+.p-datatable-column-header-content {
+  justify-content: center;
+}
+
+th.p-datatable-header-cell {
+  border-bottom: unset !important;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .table th, .table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .table th::before, .table td::before {
+    content: attr(data-header);
+    float: left;
+    font-weight: bold;
+  }
+  .table td {
+    clear: both;
+  }
+}
+table .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+table .buttons button {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+table .buttons button.edit_btn {
+  background: #7C9DC4;
+}
+table .buttons button.edit_btn:hover {
+  border-color: #7C9DC4;
+  color: #7C9DC4;
+  background: #fff;
+}
+table .buttons button.delete_btn {
+  background: #A80202;
+}
+table .buttons button.delete_btn:hover {
+  border-color: #A80202;
+  color: #A80202;
+  background: #fff;
+}
+
+.products_table th {
+  background: #E0BDB0;
+  padding: 18px 0 !important;
+}
+
+/* Transition Styles */
+.fade-blur-enter-active, .fade-blur-leave-active {
+  transition: opacity 0.6s ease-in-out, filter 0.6s ease-in-out;
+}
+
+.fade-blur-enter, .fade-blur-leave-to {
+  opacity: 0.3;
+  filter: blur(5px);
+}
+
+.error-msg {
+  background: #a10606;
+  padding: 8px 8px;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-block: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+.error-msg i.pi {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid #fff;
+  font-size: 13px;
+  background: #fff;
+  color: #a10606;
+  font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+
+.p-toast {
+  z-index: 99999 !important;
+}
+
+.skeleton-loader .skeleton-tab {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 0.5px solid rgba(217, 217, 217, 0.8);
+  justify-content: space-evenly;
+  padding-bottom: 14px;
+}
+.skeleton-loader .skeleton-tab .skeleton-image,
+.skeleton-loader .skeleton-tab .skeleton-text,
+.skeleton-loader .skeleton-tab .skeleton-button {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+.skeleton-loader .skeleton-tab .skeleton-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+}
+.skeleton-loader .skeleton-tab .skeleton-text {
+  width: 60%;
+  height: 12px;
+  margin-bottom: 8px;
+}
+.skeleton-loader .skeleton-tab .skeleton-button {
+  width: 25px;
+  height: 25px;
+}
+
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+.variant_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0;
+  border: 1px solid transparent;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+.variant_btn i.pi {
+  font-size: 18px;
+  font-weight: 800;
+}
+.variant_btn.submit_variant {
+  background: #E0BDB0;
+}
+.variant_btn.submit_variant:hover {
+  border: 1px solid #E0BDB0;
+  background: #fff;
+  color: #E0BDB0;
+}
+.variant_btn.delete_variant {
+  background: #A80202;
+}
+.variant_btn.delete_variant:hover {
+  border: 1px solid #A80202;
+  background: #fff;
+  color: #A80202;
+}
+
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+form {
+  max-width: unset;
+  justify-content: flex-start;
+  min-height: unset;
+}
+form .inputs {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-block-end: 30px;
+  width: 100%;
+}
+form .inputs .input-wrap {
+  width: 30%;
+}
+@media screen and (max-width: 767px) {
+  form .inputs .input-wrap {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+form .addons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+form .addons .addon_tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  width: 250px;
+}
+form .addons .addon_tab input {
+  width: 40px;
+}
+form .addons .addon_tab label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+form .addons .addon_tab label .image {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.0509803922);
+  flex-shrink: 0;
+}
+form .addons .addon_tab label .image img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+form .addons .addon_tab label .text h3 {
+  font-size: 14px;
+  font-weight: 400;
+  max-height: 35px;
+  overflow-y: scroll;
+}
+form .addons .addon_tab label .text p {
+  margin-bottom: 0;
+}
+
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+/*------------------------------ Empty Content -----------------------------------*/
+.empty,
+.empty-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  min-height: 50vh;
+}
+.empty i,
+.empty-chat i {
+  font-size: 150px;
+  margin-bottom: 20px;
+  color: #7C9DC4;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.empty h3,
+.empty-chat h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+.submit_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+.submit_buttons .main-btn {
+  max-width: 350px;
+}
+.submit_buttons .refuse_btn {
+  background: #E0BDB0;
+}
+.submit_buttons .refuse_btn:hover {
+  border-color: #E0BDB0 !important;
+  color: #E0BDB0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    outline: 0px solid rgba(255, 0, 0, 0.462745098);
+  }
+  100% {
+    transform: scale(1.1);
+    outline: 5px solid rgba(255, 0, 0, 0.5450980392);
+  }
+}
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.pagination p {
+  font-size: clamp(14px, 4vw, 18px);
+  color: #434343;
+}
+.pagination ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+.pagination ul li {
+  border: 1px solid #B26FAC;
+  padding: 2px 8px;
+  color: #B26FAC;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.pagination ul li:hover, .pagination ul li.active {
+  background: #B26FAC;
+  color: #fff;
+}
+.pagination .p-paginator.p-component {
+  direction: ltr;
+  justify-content: flex-start;
+  margin-block-start: 15px;
+  background: rgba(124, 157, 196, 0.4);
+  border-radius: 0;
+}
+.pagination .p-paginator.p-component button {
+  color: #000;
+}
+.pagination button:hover {
+  background: #7C9DC4;
+  color: #fff !important;
+}
+.pagination button.p-paginator-page.p-paginator-element.p-link.p-highlight {
+  background: #7C9DC4;
+  color: #fff;
+}
+.pagination .card {
+  width: 100%;
+}
+
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+.order_items {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-bottom: clamp(20px, 2.5vw, 70px);
+}
+.order_items .order_item {
+  border-radius: 20px;
+  width: 48%;
+  padding: 20px 0;
+  margin-bottom: clamp(10px, 2.5vw, 30px);
+}
+.order_items .order_item h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding: 0 clamp(10px, 2.5vw, 30px);
+}
+.order_items .order_item hr {
+  width: 100%;
+  border: 1px solid #F1F1F1;
+}
+.order_items .order_item .content {
+  margin-block-start: 25px;
+  padding: 0 clamp(10px, 2.5vw, 30px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+@media (max-width: 567px) {
+  .order_items .order_item .content {
+    flex-wrap: wrap !important;
+  }
+  .order_items .order_item .content .image {
+    width: 50px;
+    height: 50px;
+  }
+  .order_items .order_item .content .image img {
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
+  }
+}
+.order_items .order_item .content .image {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.order_items .order_item .content .info {
+  width: 100%;
+}
+.order_items .order_item .content .info .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  width: 100%;
+}
+.order_items .order_item .content .info .row h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.order_items .order_item .content .info .row h5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.order_items .order_item .content .info .row h5 i.pi-star-fill {
+  color: #E5A618;
+}
+.order_items .order_item .content .info .row h5 i.pi-mobile {
+  color: #7C9DC4;
+}
+.order_items .order_item.product_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+  padding-inline: 8px;
+  max-height: 170px;
+}
+.order_items .order_item.product_info .image {
+  width: 80px;
+  height: 120px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.order_items .order_item.product_info .image img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.order_items .order_item.product_info .info {
+  padding-inline: 5px;
+  flex-grow: 1;
+}
+.order_items .order_item.product_info .info h2 {
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.order_items .order_item.product_info .info p {
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5019607843);
+  max-height: 60px;
+  overflow: overlay;
+}
+.order_items .order_item.product_info .info ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  padding-inline-end: 20px;
+}
+.order_items .order_item.product_info .info ul li h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+.order_items .order_item.product_info .info ul li span {
+  font-size: 14px;
+  color: #7C9DC4;
+}
+@media screen and (max-width: 767px) {
+  .order_items .order_item.product_info {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+}
+.order_items .order_item.order_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+  flex-grow: 1;
+}
+.order_items .order_item.order_info .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+  width: 100%;
+}
+.order_items .order_item.order_info .content .tab {
+  width: 48%;
+  flex-grow: 1;
+}
+.order_items .order_item.order_info .content .tab h5 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #696969;
+}
+.order_items .order_item.order_info .content .tab h6 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+.order_items .order_item.fatoorah_info {
+  width: 100%;
+}
+.order_items .order_item.fatoorah_info .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 20px;
+}
+.order_items .order_item.fatoorah_info .content .row h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: grey;
+}
+.order_items .order_item.fatoorah_info .content .row h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.order_items .order_item.fatoorah_info .content .row:last-of-type h3,
+.order_items .order_item.fatoorah_info .content .row:last-of-type h5 {
+  color: #7C9DC4 !important;
+}
+@media (max-width: 767px) {
+  .order_items {
+    flex-wrap: wrap;
+  }
+  .order_items .order_item {
+    width: 100%;
+    flex-wrap: wrap !important;
+  }
+  .order_items .order_item .image {
+    height: 80px;
+    margin-inline-end: auto;
+  }
+  .order_items .order_item .image img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+h6.fatorah_text {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 500;
+  margin: 0 auto 21px;
+  text-align: center;
+}
+
+.p-multiselect {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.p-multiselect-trigger {
+  justify-content: flex-end;
+}
+
+.p-multiselect-option {
+  gap: 5px !important;
+}
+
+.p-multiselect-items-wrapper {
+  padding: 5px;
+}
+.p-multiselect-items-wrapper .p-multiselect-item {
+  flex-direction: row-reverse;
+  direction: inherit !important;
+  gap: 6px;
+}
+.p-multiselect-items-wrapper .p-multiselect-item:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.p-multiselect-list-container {
+  background: #fff;
+  box-shadow: 0 0 10px #e4e4e4;
+  padding: 5px 8px;
+  direction: inherit !important;
+}
+.p-multiselect-list-container .p-checkbox {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #e4e4e4;
+  margin-inline-end: 5px;
+}
+
+.p-multiselect-label,
+.p-multiselect-header {
+  display: none !important;
+}
+
+.multiSelect_placeholder {
+  inset-inline-start: 0;
+}
+
+/* display grid mixin 
+ DEFAULT VALUE 265PX DIVIDE WRAPPER TO 3 COLUMS 
+ YOU NEED TO PUT VALUE IN MIXIN WITH PX  >>>  EXAMPLE 
+@include displayGrid(265px);
+*/
+/*
+---TEXT TRUNCATE
+> $lines => the max number of lines to show before ellipses.
+> $maxWidth => max width of text element.
+*/
+/* MAIN FONT FAMILY */
+/* MAIN FONT SIZE */
+/* COLORS VARIABLES */
+.chats_page {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+  position: relative;
+  overflow-x: hidden;
+  border-radius: 20px;
+  direction: rtl;
+  height: 90vh;
+  padding-bottom: 5px;
+}
+.chats_page .page {
+  padding: 14px 0 0;
+  border-radius: 20px;
+  border: 1px solid #F1F1F1;
+  box-shadow: -3px 3px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  overflow: hidden;
+}
+.chats_page .page h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  padding-inline: 15px;
+}
+.chats_page .page .content {
+  padding-inline: 0px;
+}
+.chats_page .page .content .message-time {
+  margin-inline-start: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.chats_page .page .content .message_text {
+  font-size: 14px;
+  font-weight: 400;
+}
+.chats_page .page .content .chat_tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+  position: relative;
+  padding: 15px 8px;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.chats_page .page .content .chat_tab:not(:last-of-type) {
+  border-bottom: 1px solid #F1F1F1;
+}
+.chats_page .page .content .chat_tab .time {
+  position: absolute;
+  inset-inline-end: 10px;
+  top: 20px;
+  font-size: 12px;
+  color: #3C3C3C;
+}
+.chats_page .page .content .chat_tab .image {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  position: relative;
+}
+.chats_page .page .content .chat_tab .image img {
+  overflow: hidden;
+  border-radius: 50%;
+}
+.chats_page .page .content .chat_tab .message_link {
+  text-decoration: underline !important;
+}
+.chats_page .page .content .chat_tab h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+.chats_page .page .content .chat_tab p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  text-wrap: pretty;
+  font-size: 12px;
+  font-weight: 400;
+  color: #3C3C3C;
+}
+.chats_page .page .content .chat_tab:hover, .chats_page .page .content .chat_tab.active {
+  background: rgba(124, 157, 196, 0.2);
+}
+.chats_page .page .content .chat_tab .contact_text {
+  max-width: 80%;
+}
+.chats_page .page.contacts {
+  width: 300px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow-y: scroll;
+  transition: 1s;
+  margin-bottom: 5px;
+}
+.chats_page .page.contacts::-webkit-scrollbar {
+  width: 0px;
+}
+.chats_page .page.contacts .main-btn {
+  display: none;
+}
+@media (max-width: 767px) {
+  .chats_page .page.contacts {
+    position: absolute;
+    top: 0;
+    max-width: 300px;
+    width: 100%;
+    height: 99%;
+    z-index: 9;
+  }
+  .chats_page .page.contacts .main-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px 20px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    inset-inline-end: 10px;
+    top: 10px;
+    background-color: #fff;
+    color: #7C9DC4;
+  }
+  .chats_page .page.contacts .main-btn:hover {
+    background: #7C9DC4;
+  }
+}
+.chats_page .page.contact_chat {
+  flex-grow: 1;
+  padding-top: 8px;
+  position: relative;
+  border-radius: 20px 20px;
+}
+.chats_page .page.contact_chat .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  padding: 0 12px 5px;
+  position: relative;
+}
+.chats_page .page.contact_chat .top .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+.chats_page .page.contact_chat .top .info .image {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  position: relative;
+}
+.chats_page .page.contact_chat .top .info .image img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.chats_page .page.contact_chat .top .info .name h4 {
+  padding: 0;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.chats_page .page.contact_chat .top .info .name .ask_invoice {
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: underline;
+  transition: 0.3s;
+  color: #7C9DC4;
+  cursor: pointer;
+  margin-top: -8px;
+  font-family: "Cairo";
+}
+.chats_page .page.contact_chat .top .info .name .ask_invoice:hover {
+  text-decoration: unset;
+}
+.chats_page .page.contact_chat .top .chat-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+.chats_page .page.contact_chat .top .main-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+}
+.chats_page .page.contact_chat .top .show-contacts-btn {
+  display: none;
+  transition: 1s;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 9;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .chats_page .page.contact_chat .top .show-contacts-btn {
+    display: block;
+  }
+}
+.chats_page .page.contact_chat .content {
+  height: 71vh;
+  padding-block: 10px 0;
+  overflow: hidden scroll;
+}
+.chats_page .page.contact_chat .content .recieved_msg,
+.chats_page .page.contact_chat .content .sent_msg {
+  max-width: 540px;
+  padding: 12px 8px 0 8px;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.chats_page .page.contact_chat .content .recieved_msg .image,
+.chats_page .page.contact_chat .content .sent_msg .image {
+  height: 200px;
+  cursor: pointer !important;
+}
+.chats_page .page.contact_chat .content .recieved_msg .message_text,
+.chats_page .page.contact_chat .content .sent_msg .message_text {
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words if needed */
+  overflow-wrap: break-word; /* Ensure consistent word breaking */
+}
+.chats_page .page.contact_chat .content .sent_msg {
+  background: #4C637F;
+  margin-inline: auto 14px;
+}
+.chats_page .page.contact_chat .content .sent_msg::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -8px;
+  top: -14px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent transparent #4C637F;
+  transform: rotate(-30deg);
+}
+.chats_page .page.contact_chat .content .recieved_msg {
+  background: #000;
+  margin-inline: 14px 5px;
+}
+.chats_page .page.contact_chat .content .recieved_msg::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: -8px;
+  top: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent transparent #000;
+  transform: rotate(210deg);
+}
+.chats_page .page.contact_chat .content .message.invoice-msg {
+  background: #e4e4e4;
+  overflow: hidden;
+  margin-inline-end: 0;
+  max-width: 400px;
+  border-radius: 20px;
+}
+.chats_page .page.contact_chat .content .message.invoice-msg::after {
+  display: none !important;
+}
+.chats_page .page.contact_chat .content .message.invoice-msg:last-of-type {
+  margin-bottom: 0;
+}
+.chats_page .page.contact_chat .content .message.invoice-msg .message-time {
+  margin-inline-end: 10px;
+}
+.chats_page .page.contact_chat .content .audio {
+  height: 30px;
+}
+.chats_page .page.contact_chat .content .audio audio::-webkit-media-controls-panel {
+  height: fit-content;
+  color: #fff !important;
+  filter: invert(1);
+}
+.chats_page .page.contact_chat .content .audio audio::-webkit-media-controls-current-time-display,
+.chats_page .page.contact_chat .content .audio audio::-webkit-media-controls-time-remaining-display {
+  text-shadow: unset !important;
+}
+.chats_page .page.contact_chat .content .audio button {
+  background: #fff !important;
+}
+.chats_page .page.contact_chat .content .invoice {
+  color: #000;
+  max-width: 400px;
+}
+.chats_page .page.contact_chat .content .invoice h6 {
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.chats_page .page.contact_chat .content .invoice ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  max-width: 250px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.chats_page .page.contact_chat .content .invoice ul li p:nth-of-type(2) {
+  min-width: 70px;
+}
+.chats_page .page.contact_chat .content .invoice ul li:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.chats_page .page.contact_chat .content .invoice + .message-time {
+  color: #000 !important;
+}
+.chats_page .page.contact_chat form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-height: unset;
+  height: unset;
+  background: #fff;
+  max-width: unset;
+  width: 100%;
+  padding: 8px 5px;
+}
+.chats_page .page.contact_chat form .inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  border-radius: 35px;
+  background: #F6F6F6;
+  padding: 10px 14px;
+  margin-bottom: 0;
+}
+.chats_page .page.contact_chat form .inputs .pi {
+  font-size: 20px;
+  color: #4C637F;
+  cursor: pointer;
+}
+.chats_page .page.contact_chat form button.microphone {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #4C637F;
+  flex-shrink: 0;
+  transition: 0.6s;
+  border: 1px solid transparent;
+}
+.chats_page .page.contact_chat form button.microphone .pi {
+  font-size: 25px;
+  color: #fff;
+}
+.chats_page .page.contact_chat form button.microphone:hover {
+  border-color: #4C637F;
+  background: #fff;
+}
+.chats_page .page.contact_chat form button.microphone:hover .pi {
+  color: #4C637F;
+}
+.chats_page .status_circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  bottom: 0px;
+  left: 8px;
+}
+.chats_page .status_circle.active {
+  background: green;
+}
+
+.half-page {
+  background: linear-gradient(to right, #E0BDB0 0%, #E0BDB0 50%, #7C9DC4 50%, #7C9DC4 100%);
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.page_content {
+  padding: 40px clamp(8px, 2.5vw, 72px);
+  box-shadow: -3px 3px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  background-color: #fff;
+}
+@media (max-width: 400px) {
+  .page_content {
+    padding: 20px 8px;
+  }
+}
+
+.button {
+  margin-bottom: 15px;
+  text-align: end;
+}
+.button .main-btn {
+  max-width: 250px;
+  width: 100%;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.page {
+  padding: 26px 0;
+  background: #fff;
+  box-shadow: -3px 3px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+@media (max-width: 500px) {
+  .page {
+    padding: 14px 8px;
+  }
+}
+.page h4 {
+  padding-inline: clamp(8px, 2.5vw, 30px);
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 400;
+  color: #1F2327;
+  margin-bottom: 20px;
+}
+.page hr {
+  border: 1px solid #F1F1F1;
+}
+.page .content {
+  padding-inline: clamp(8px, 2.5vw, 30px);
+}
+
+.edit_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .edit_buttons {
+    flex-wrap: wrap;
+  }
+}
+.edit_buttons a {
+  max-width: 48%;
+  width: 100%;
+}
+.edit_buttons .main-btn {
+  margin: 20px 0 0;
+}
+
+.p-toast-message-content {
+  padding: 15px 10px;
+  gap: 10px;
+  direction: rtl;
+  margin-bottom: 2px;
+  z-index: 999;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon.p-icon {
+  width: 24px;
+  height: unset;
+}
+
+div#OT_e4d2dae9_c748_4a8e_89fc_035da64368f0 {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  z-index: 999;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0 !important;
+}
+
+.p-rating-cancel-item {
+  display: none !important;
+}/*# sourceMappingURL=style.css.map */

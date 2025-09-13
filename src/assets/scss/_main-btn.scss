@@ -1,0 +1,74 @@
+@import "./variables";
+.main-btn {
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	background: $btnColor;
+	font-size: clamp(16px , 2.5vw , 20px);
+	font-weight: 600;
+	position: relative;
+	z-index: 3;
+	overflow: hidden;
+	border: 1px solid;
+	cursor: pointer;
+  border-radius: 50px;
+  font-family: $fontFamily !important;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 0;
+		height: 100%;
+		background: #fff;
+		z-index: -1;
+		transition: 0.3s;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 50%;
+		width: 0;
+		height: 100%;
+		background: #fff;
+		z-index: -1;
+		transition: 0.3s;
+	}
+	&:hover {
+		&::after {
+			width: 50%;
+		}
+		&::before {
+			width: 50%;
+		}
+		color: $btnColor;
+		border: 1px solid $btnColor !important;
+	}
+	&.variants_btn{
+    background: #E0BDB0;
+    color: #fff;
+    &:hover{
+      color: #fff;
+      border-color: #E0BDB0;
+      &::after,&::before{
+        background: #E0BDB0;
+      }
+    }
+  }
+}
+.main-btn.reversed {
+	background: #fff;
+	color: $btnColor;
+	border: 1px solid $btnColor !important;
+	&:hover {
+		color: #fff;
+	}
+	&::after {
+		background: $btnColor;
+	}
+	&::before {
+		background: $btnColor;
+	}
+}
+

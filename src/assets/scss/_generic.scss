@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Light.woff2") format("woff2"), 
+       url("../fonts/Cairo-Light.woff") format("woff"), 
+       url("../fonts/Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Medium.woff2") format("woff2"), 
+       url("../fonts/Cairo-Medium.woff") format("woff"), 
+       url("../fonts/Cairo-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Regular.woff2") format("woff2"), 
+       url("../fonts/Cairo-Regular.woff") format("woff"), 
+       url("../fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-SemiBold.woff2") format("woff2"), 
+       url("../fonts/Cairo-SemiBold.woff") format("woff"), 
+       url("../fonts/Cairo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Bold.woff2") format("woff2"), 
+       url("../fonts/Cairo-Bold.woff") format("woff"), 
+       url("../fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-Black.woff2") format("woff2"), 
+       url("../fonts/Cairo-Black.woff") format("woff"), 
+       url("../fonts/Cairo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-ExtraBold.woff2") format("woff2"), 
+       url("../fonts/Cairo-ExtraBold.woff") format("woff"), 
+       url("../fonts/Cairo-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/Cairo-ExtraLight.woff2") format("woff2"), 
+       url("../fonts/Cairo-ExtraLight.woff") format("woff"), 
+       url("../fonts/Cairo-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+
+
+
+// RESET GLOBAL STYLES
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: $fontFamily;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: $fontFamily;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body{
+  font-family: $fontFamily;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  background: #F8F8FF;
+}
+
+// CHANGE SCROLL BAR COLOR
+*::-webkit-scrollbar {
+  background-color: #fff;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $mainColor;
+  border-radius: 25px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #fff;
+  width: 10px;
+}
+
+// CLASS FOR BUTTONS RESET
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.input{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+input ,
+textarea,
+select{
+  border: unset;
+  outline: none;
+  width: 100%;
+  direction: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  height: 30px;
+  background: transparent;
+  font-family: $fontFamily;
+}
+
+textarea{
+  max-height: 60px;
+}
+
+// button
+button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+// FORM INPUTS RESET
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+// REMOVE INPUT BACKGROUND THAT ADDED BY AUTO COMPLETE
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+}
+
+
+
+::selection{
+  background: $secColor;
+  color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: #F8F8FF;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color:$secColor;
+  border-radius: 30px;
+}
+
+
+input[type="file" i]::-webkit-file-upload-button{
+  display: none;
+}
+
+
+

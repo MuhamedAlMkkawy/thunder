@@ -1,0 +1,28 @@
+.error-msg{
+  background: #a10606;
+  padding: 8px 8px;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-block: 0px 10px;
+  @include displayFlex($justify : flex-start , $gap: 8px);
+  i.pi{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #fff;
+    font-size: 13px;
+    background: #fff;
+    color: #a10606;
+    font-weight: 900;
+    @include displayFlex();
+  }
+}
+
+
+.p-toast{
+  z-index: 99999 !important;
+}
